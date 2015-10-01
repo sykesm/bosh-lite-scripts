@@ -1,0 +1,6 @@
+#!/bin/bash
+
+user="internal_user"
+password="internal-password"
+
+pretty-json-get http://$user:$password@api.bosh-lite.com/internal/bulk/apps?batch_size=1001\&format=fingerprint\&token=\\{\\}

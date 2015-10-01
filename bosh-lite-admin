@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+cf logout
+cf api --skip-ssl-validation api.bosh-lite.com
+cf auth admin admin
+cf create-org o
+cf target -o o
+cf create-space -o o s
+cf target -o o -s s
