@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 PRETTY_PRINT="cat"
 
@@ -14,4 +14,6 @@ elif [ -n "$(type -t underscore)" ]; then
         PRETTY_PRINT="underscore print"
 fi
 
-curl -s $1 | $PRETTY_PRINT
+set -o pipefail
+
+curl -s -k -H 'Accept: application/json' $1 | $PRETTY_PRINT
